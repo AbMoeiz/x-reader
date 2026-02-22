@@ -26,7 +26,7 @@ x-reader is composable. Use the layers you need:
 
 | Layer | What | Format | Install |
 |-------|------|--------|---------|
-| **Python CLI/Library** | Basic content fetching + unified schema | `pip install x-reader` | Required |
+| **Python CLI/Library** | Basic content fetching + unified schema | See [Install](#install) | Required |
 | **Claude Code Skills** | Video transcription + AI analysis | Copy `skills/` to `~/.claude/skills/` | Optional |
 | **MCP Server** | Expose reading as MCP tools | `python mcp_server.py` | Optional |
 
@@ -67,7 +67,7 @@ Then in Claude Code, just send a YouTube/Bilibili/podcast link — the video ski
 ### Layer 3: MCP Server
 
 ```bash
-pip install "x-reader[mcp]"
+pip install "x-reader[mcp] @ git+https://github.com/runesleo/x-reader.git"
 python mcp_server.py
 ```
 
